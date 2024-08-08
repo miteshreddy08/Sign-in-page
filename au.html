@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(143, 167, 223);
+        }
+        .searchDiv{
+            display: flex;
+            position: relative;
+            background-color: white;
+            border-radius: 20px;
+        }
+        .searchDiv select{
+            border: none;
+            padding: 10px;
+            z-index: 1;
+            background-color: violet;
+            border-radius: 20px;
+        }
+        .searchDiv input{
+            border: none;
+            padding: 10px;
+            width: 250px;
+            /* border-radius:20px; */
+        }
+        option {
+            font-size: 16px;
+            background-color: #fff;
+            color: #333;
+        }
+        button{
+            border: none;
+            background-color: white;
+            border-radius: 0 10px 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="searchDiv">
+        <select name="category" id="category" onclick="updatePlaceholder()">
+            <option value="Everything">Everything</option>
+            <option value="Data analyst">Data analyst</option>
+            <option value="Web development">Web development</option>
+            <option value="Software development">Software development</option>
+            <option value="IT Consultent">IT Consultent</option>
+            <option value="Network administrator">Network administrator</option>
+        </select>
+        <input type="text" name="search" id="search" placeholder="Search Anything">
+        <button type="submit">🔍</button>
+    </div>
+    <script>
+        function updatePlaceholder(event){
+            var category = document.getElementById("category").value;
+            document.getElementById('search').placeholder = 'search for ' + category
+        }
+    </script>
+</body>
+</html>
